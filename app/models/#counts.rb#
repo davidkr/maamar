@@ -1,0 +1,4 @@
+
+class Counts < ActiveRecord::Base
+  attr_accessible :hist
+end

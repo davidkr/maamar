@@ -1,0 +1,17 @@
+# encoding: utf-8
+<h1 id="history">היסטוריה</h1>
+ 
+<table>
+  <tr>
+    <th>תאור</th>
+    <th></th>
+  </tr>
+ 
+<% @list.each do |h| %>
+  <tr>
+    <td><%= h.desc %></td>
+    <td><%= link_to 'הצג', :controller => "articles" , :action => "read" , :id => h.name  %></td>
+  </tr>
+<% end %>
+</table>
+ 

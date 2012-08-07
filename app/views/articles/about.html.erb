@@ -1,0 +1,21 @@
+# encoding: utf-8
+
+<header>
+<style type="text/css">
+a:link {color:#FF0000;}    /* unvisited link */
+a:visited {color:#00FF00;} /* visited link */
+a:hover {color:#FF00FF;}   /* mouse over link */
+a:active {color:#0000FF;}  /* selected link */
+</style>
+<%= javascript_include_tag "aboutClick" %>
+          <% if true %>
+          <%= image_tag "IMG_0325.jpg" , :size => "450x520", :class=> "shir", :mouseover => "IMG_0324.jpg" %>
+          <% end %> 
+          <% if false %>
+          <%= image_tag "IMG_0324.jpg" , :size => "400x500", :onclick => "IMG_0325.jpg", :class=> "shir" %>
+          <%= image_tag "IMG_0324.jpg" , :size => "400x500", :class=> "shir", :onclick => "aboutClick.js" %>
+          <% end %>
+</header>
+
+         
+  

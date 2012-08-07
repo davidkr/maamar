@@ -1,0 +1,58 @@
+#!/Users/davidkramf/documents
+# encoding: utf-8
+class ArticlesController < ApplicationController
+  def hello
+     logger.debug "my url is : #{request.remote_ip}"   
+  end
+
+    
+  def read
+     logger.debug "parms is  #{params}"     
+    #req = "/Users/davidkramf/documents/gold.pdf"
+     req = "/" + Articles.find_by_name(params[:id])[:loc].gsub(/ /,'/')
+     logger.debug "req is  #{req}" 
+     Counts.transaction do
+       c = Counts.lock.first
+       c.hist = c.hist + 1
+       c.save
+     end    
+     send_file(req, :type => "application/pdf", :disposition => "inline")
+  end
+
+  def index 
+     redirect_to :action => "hello"
+  end
+  
+  def list
+     @list = Articles.all 
+  end
+  
+  
+  def create
+     if admin?
+       logger.debug "parms is  #{params}"     
+       @article = Articles.new( :name => params[:name].gsub(/ /,'') ,
+                                :loc  => params[:loc].strip         ,
+                                :desc => params[:desc] 
+                              )
+       @article.save 
+     end 
+     redirect_to :action => "list"
+  end
+
+
+  def new
+    if admin?
+      @article = Articles.new
+      logger.debug "class of article is:  #{@article.class}"
+    else
+      redirect_to :action => "list"
+    end  
+  end
+
+  def about
+  end
+ 
+end  
+
+

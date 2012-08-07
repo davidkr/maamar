@@ -1,0 +1,52 @@
+#history{
+    font-family:"Times New Roman";text-align:right
+ }
+        
+  
+  table, th, td
+{
+float:right;
+}
+
+.picadily {font-family:"Times New Roman","Times","serif";
+ text-align:center;
+/*position:relative;
+left:600px;
+width:300px; */
+font-size:800%;
+}
+pre {color:red;text-align:center;}
+
+div  {color:red;text-align:center;font-size:75%;line-height:75%}
+
+.shalom{
+ float:right;
+ }
+
+#notice {
+  color: green; }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff; }
+  ul li {
+    font-size: 12px;
+    list-style: square; } }
